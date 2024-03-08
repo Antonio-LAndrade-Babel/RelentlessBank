@@ -1,9 +1,7 @@
 package com.relentlessbank.clientarea.model;
 
 import lombok.Data;
-
-import java.util.HashSet;
-import java.util.Set;
+import lombok.Setter;
 
 @Data
 public class Client {
