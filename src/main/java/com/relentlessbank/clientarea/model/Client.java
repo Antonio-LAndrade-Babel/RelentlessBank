@@ -1,10 +1,9 @@
 package com.relentlessbank.clientarea.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.Set;
 
 @Data
 @Entity
@@ -16,4 +15,7 @@ public class Client {
     private String password;
     private String surname;
     private String lastName;
+
+    @OneToMany(mappedBy = "client")
+    private Set<BankAccount> bankAccounts;
 }
