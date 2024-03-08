@@ -6,6 +6,8 @@ import com.relentlessbank.clientarea.model.Client;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("/api/client")
 public class ClientController {
@@ -24,12 +26,14 @@ public class ClientController {
         return ResponseEntity.ok(updatedClient);
     }
     @PostMapping("/find")
-    public ResponseEntity<Client> getClientById (@RequestBody int id) {
+    public ResponseEntity<Client> getClientById (@RequestBody Map<String, Integer> json) {
+        int id = json.getOrDefault("id", 0);
         Client client = clientService.getClientById(id);
         return ResponseEntity.ok().body(client);
     }
     @PostMapping("/delete")
-    public ResponseEntity<?> deleteClient (@RequestBody int id){
+    public ResponseEntity<?> deleteClient (@RequestBody Map<String, Integer> json){
+        int id = json.getOrDefault("id", 0);
         clientService.deleteClient(id);
         return ResponseEntity.ok().build();
     }
