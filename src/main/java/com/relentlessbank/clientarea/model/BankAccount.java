@@ -18,5 +18,5 @@ public class BankAccount {
     private Client client;
 
     private String accountIBAN;
-    private double accountBalance;
+    private Double accountBalance;
 }
