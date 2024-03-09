@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS client (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(50) NOT NULL,
+    surname VARCHAR(50),
+    last_name VARCHAR(50)
+);
+
+CREATE TABLE IF NOT EXISTS bank_account (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    client_id INT,
+    accountiban VARCHAR(34) NOT NULL,
+    account_balance DECIMAL(15, 2),
+    CONSTRAINT fk_bank_account_client
+        FOREIGN KEY (client_id)
+        REFERENCES Client(id)
+);
