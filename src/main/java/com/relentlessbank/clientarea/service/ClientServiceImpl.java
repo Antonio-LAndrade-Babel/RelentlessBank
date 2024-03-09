@@ -20,10 +20,10 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public Client updateClient(int id, Client clientDetails) {
         Client client = clientRepository.findById(id).orElseThrow(() -> new RuntimeException("No se ha encontrado ningún cliente con la ID :: " + id));
-        client.setUsername(clientDetails.getUsername());
-        client.setPassword(clientDetails.getPassword());
-        client.setSurname(clientDetails.getSurname());
-        client.setLastName(clientDetails.getLastName());
+        if (clientDetails.getUsername() != null) client.setUsername(clientDetails.getUsername());
+        if (clientDetails.getPassword() != null) client.setPassword(clientDetails.getPassword());
+        if (clientDetails.getSurname() != null) client.setSurname(clientDetails.getSurname());
+        if (clientDetails.getLastName()!= null) client.setLastName(clientDetails.getLastName());
         return clientRepository.save(client);
     }
     @Override
