@@ -21,19 +21,17 @@ public class ClientController {
         return ResponseEntity.ok(newClient);
     }
     @PostMapping("/update/{id}")
-    public ResponseEntity<Client> updateClient (@PathVariable(value = "id") int id, @RequestBody Client clientDetails){
+    public ResponseEntity<Client> updateClient (@PathVariable int id, @RequestBody Client clientDetails){
         Client updatedClient = clientService.updateClient(id, clientDetails);
         return ResponseEntity.ok(updatedClient);
     }
-    @PostMapping("/find")
-    public ResponseEntity<Client> getClientById (@RequestBody Map<String, Integer> json) {
-        int id = json.getOrDefault("id", 0);
+    @PostMapping("/find/{id}")
+    public ResponseEntity<Client> getClientById (@PathVariable int id) {
         Client client = clientService.getClientById(id);
         return ResponseEntity.ok().body(client);
     }
-    @PostMapping("/delete")
-    public ResponseEntity<?> deleteClient (@RequestBody Map<String, Integer> json){
-        int id = json.getOrDefault("id", 0);
+    @PostMapping("/delete/{id}")
+    public ResponseEntity<?> deleteClient (@PathVariable int id){
         clientService.deleteClient(id);
         return ResponseEntity.ok().build();
     }
