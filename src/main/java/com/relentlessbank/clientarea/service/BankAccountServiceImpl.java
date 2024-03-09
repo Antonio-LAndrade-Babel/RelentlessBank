@@ -4,9 +4,11 @@ import com.relentlessbank.clientarea.model.BankAccount;
 import com.relentlessbank.clientarea.model.Client;
 import com.relentlessbank.clientarea.repository.BankAccountRepository;
 import com.relentlessbank.clientarea.repository.ClientRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class BankAccountServiceImpl implements BankAccountService {
     private final ClientRepository clientRepository;
     private final BankAccountRepository bankAccountRepository;

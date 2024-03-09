@@ -3,7 +3,6 @@ package com.relentlessbank.clientarea.controller;
 import com.relentlessbank.clientarea.model.BankAccount;
 import com.relentlessbank.clientarea.service.BankAccountService;
 
-import com.relentlessbank.clientarea.service.ClientService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,5 +40,4 @@ public class BankAccountController {
         bankAccountService.deleteBankAccount(id);
         return ResponseEntity.ok().build();
     }
-
 }
