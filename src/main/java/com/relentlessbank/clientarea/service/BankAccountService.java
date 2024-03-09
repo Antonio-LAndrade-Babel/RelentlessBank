@@ -10,6 +10,6 @@ public interface BankAccountService {
     BankAccount updateBankAccount (int id, BankAccount bankAccount);
     List<BankAccount> getAllBankAccounts();
     BankAccount getBankAccountById(int id);
-    List<BankAccount> getAllBankAccountByClient(Client client);
+    List<BankAccount> getAllBankAccountByClient(int clientId);
     void deleteBankAccount(int id);
 }

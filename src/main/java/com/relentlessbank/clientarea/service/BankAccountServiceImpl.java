@@ -38,7 +38,8 @@ public class BankAccountServiceImpl implements BankAccountService {
         return bankAccountRepository.findById(id).orElseThrow(() -> new RuntimeException ("No se ha encontrado ninguna cuenta con ID: " + id));
     }
     @Override
-    public List<BankAccount> getAllBankAccountByClient(Client client) {
+    public List<BankAccount> getAllBankAccountByClient(int clientId) {
+        Client client = clientRepository.findById(clientId).orElseThrow(() -> new RuntimeException("No existe ningún cliente con la ID: " + clientId));
         return bankAccountRepository.findAllByClient(client);
     }
     @Override
