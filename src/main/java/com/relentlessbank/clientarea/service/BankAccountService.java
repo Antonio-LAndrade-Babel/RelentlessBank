@@ -1,7 +1,6 @@
 package com.relentlessbank.clientarea.service;
 
 import com.relentlessbank.clientarea.model.BankAccount;
-import com.relentlessbank.clientarea.model.Client;
 
 import java.util.List;
 

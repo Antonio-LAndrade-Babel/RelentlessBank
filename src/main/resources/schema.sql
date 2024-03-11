@@ -15,3 +15,18 @@ CREATE TABLE IF NOT EXISTS bank_account (
         FOREIGN KEY (client_id)
         REFERENCES Client(id)
 );
+
+CREATE TABLE IF NOT EXISTS operation (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    account_id INT,
+    destiny_account_id INT,
+    operation_type VARCHAR(255),
+    date_time TIMESTAMP,
+    operation_amount DECIMAL(15, 2),
+    CONSTRAINT fk_operation_account
+        FOREIGN KEY (account_id)
+        REFERENCES bank_account(id),
+    CONSTRAINT fk_operation_destiny_account
+        FOREIGN KEY (destiny_account_id)
+        REFERENCES bank_account(id)
+);

@@ -19,4 +19,7 @@ public class BankAccount {
 
     private String accountIBAN;
     private Double accountBalance;
+
+    @OneToMany(mappedBy = "bankAccount")
+    private Set<Operation> operations;
 }
