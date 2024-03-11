@@ -7,7 +7,7 @@
     </Properties>
 
     <Appenders>
-        <RollingFile name="fileLogger" fileName="${basePath}/app.log" filePattern="${basePath}/app-%d{yyyy-MM-dd}.log">
+        <RollingFile name="fileLogger" fileName="${basePath}/ClientAreaApplication.log" filePattern="${basePath}/app-%d{yyyy-MM-dd}.log">
 
             <PatternLayout pattern="${LOG_PATTERN}"/>
 
