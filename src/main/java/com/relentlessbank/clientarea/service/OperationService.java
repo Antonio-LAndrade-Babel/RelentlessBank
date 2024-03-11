@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface OperationService {
     Operation createOperation(int accountId, Operation operation);
+    Operation getOperationById(long id);
     List<Operation> getAllOperationsByBankAccount(int accountId);
     void deleteOperation(long id);
 }

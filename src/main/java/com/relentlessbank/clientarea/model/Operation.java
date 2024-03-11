@@ -24,6 +24,7 @@ public class Operation {
     @Enumerated(EnumType.STRING)
     private OperationType operationType;
 
+    private String originIBAN;
     private String destinyIBAN;
     private LocalDateTime dateTime;
     private double operationAmount;

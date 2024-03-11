@@ -21,6 +21,7 @@ CREATE TABLE IF NOT EXISTS operation (
     account_id INT,
     destiny_account_id INT,
     operation_type VARCHAR(255),
+    originiban VARCHAR(34) NOT NULL,
     destinyiban VARCHAR(34) NOT NULL,
     date_time TIMESTAMP,
     operation_amount DECIMAL(15, 2),

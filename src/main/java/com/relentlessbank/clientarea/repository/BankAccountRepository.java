@@ -10,5 +10,6 @@ import java.util.List;
 
 @Repository
 public interface BankAccountRepository extends JpaRepository<BankAccount, Integer> {
+    BankAccount findByIban(String iban);
     List<BankAccount> findAllByClient(Client client);
 }
