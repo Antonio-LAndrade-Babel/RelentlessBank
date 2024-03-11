@@ -7,5 +7,5 @@ import java.util.List;
 public interface OperationService {
     Operation createOperation(int accountId, Operation operation);
     List<Operation> getAllOperationsByBankAccount(int accountId);
-    void deleteOperation(int id);
+    void deleteOperation(long id);
 }

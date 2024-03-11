@@ -11,11 +11,11 @@ import java.time.LocalDateTime;
 public class Operation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
     @ManyToOne
     @JoinColumn(name = "accountId", referencedColumnName = "id")
-    private BankAccount account;
+    private BankAccount bankAccount;
 
     @ManyToOne
     @JoinColumn(name = "destinyAccountId", referencedColumnName = "id")
@@ -24,6 +24,7 @@ public class Operation {
     @Enumerated(EnumType.STRING)
     private OperationType operationType;
 
+    private String destinyIBAN;
     private LocalDateTime dateTime;
     private double operationAmount;
 }
