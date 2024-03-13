@@ -19,12 +19,12 @@ public class OperationController {
         Operation newOperation = operationService.createOperation(accountId, operation);
         return ResponseEntity.ok(newOperation);
     }
-    @PostMapping("find/{id}")
+    @GetMapping("find/{id}")
     public ResponseEntity<Operation> getOperationById(@PathVariable long id){
         Operation operation = operationService.getOperationById(id);
         return ResponseEntity.ok(operation);
     }
-    @PostMapping("findallbybankaccount/{accountId}")
+    @GetMapping("findallbybankaccount/{accountId}")
     public ResponseEntity<List<Operation>> getAllOperationsByBankAccount(@PathVariable int accountId){
         List<Operation> operations = operationService.getAllOperationsByBankAccount(accountId);
         return ResponseEntity.ok(operations);

@@ -20,17 +20,17 @@ public class BankAccountController {
         BankAccount newBankAccount = bankAccountService.createBankAccount(clientId, bankAccount);
         return ResponseEntity.ok(newBankAccount);
     }
-    @PostMapping("/update/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<BankAccount> updateBankAccount(@PathVariable int id, @RequestBody BankAccount bankAccountDetails) {
         BankAccount bankAccount = bankAccountService.updateBankAccount(id, bankAccountDetails);
         return ResponseEntity.ok(bankAccount);
     }
-    @PostMapping("/find/{id}")
+    @GetMapping("/find/{id}")
     public ResponseEntity<BankAccount> getBankAccountById(@PathVariable int id){
         BankAccount bankAccount = bankAccountService.getBankAccountById(id);
         return ResponseEntity.ok(bankAccount);
     }
-    @PostMapping("/findallbyclient/{clientId}")
+    @GetMapping("/findallbyclient/{clientId}")
     public ResponseEntity<List<BankAccount>> getAllBankAccountByClient(@PathVariable int clientId) {
         List<BankAccount> bankAccounts = bankAccountService.getAllBankAccountByClient(clientId);
         return ResponseEntity.ok(bankAccounts);

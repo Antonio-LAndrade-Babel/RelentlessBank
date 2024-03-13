@@ -23,13 +23,13 @@ public class ClientController {
         logger.info("Se ha creado un nuevo cliente [ID = " + newClient.getId() + "].");
         return ResponseEntity.ok(newClient);
     }
-    @PostMapping("/update/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<Client> updateClient (@PathVariable int id, @RequestBody Client clientDetails){
         Client updatedClient = clientService.updateClient(id, clientDetails);
         logger.info("Se ha hecho una actualización del cliente [ID = " + id + "].");
         return ResponseEntity.ok(updatedClient);
     }
-    @PostMapping("/find/{id}")
+    @GetMapping("/find/{id}")
     public ResponseEntity<Client> getClientById (@PathVariable int id) {
         Client client = clientService.getClientById(id);
         logger.info("Se ha hecho una búsqueda sobre el cliente [ID = " + id + "].");
